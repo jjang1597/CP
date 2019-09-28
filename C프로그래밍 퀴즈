@@ -1,0 +1,102 @@
+1. C언어의 특징과 장점을 적으시오.
+이식성이 좋고, 실행속도가 빠릅니다. 모듈식 설계가 용이하며, 절차지향적입니다.
+
+2. C언어의 활용에 대해 적으시오.
+운영체제 및 필수시스템 개발 등에 활용됩니다.
+
+3. 두 실수를 메모리에 초기화 더하고 화면에 출력하시오.
+#include <stdio.h>
+
+int main() {
+  float a = 1.1, b = 2.2;
+  printf("%f", a + b);
+}
+
+4. 두 실수를 키보드로 받고 더해서 화면에 출력하시오.
+#include <stdio.h>
+
+int main() {
+  float a, b;
+  scanf("%f", &a, &b);
+  printf("%f", a + b);
+}
+
+5. 두 실수를 메모리에 저장하고 함수 add()를 활용하여 더한 결과를 리턴 받아 화면에 출력하시오.
+#include <stdio.h>
+
+int add(float a, float b) {
+  return a + b;
+}
+
+int main() {
+  float a = 1.1, b = 2.2;
+  printf("%f", add(a, b));
+}
+
+6. my.txt에 33과 22가 들어 있다. 이를 읽고 더하고 결과를 출력하시오.
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+  int a, b;
+  FILE* fp = fopen("my.txt", "r");
+  fscanf(fp, "%d %d", &a, &b);
+  printf("%d", a + b);
+  fclose(fp);
+}
+
+7. 3개의 과일을 {"Banana", "Orange", "Kiwi"} 초기화 하고 화면에 출력하시오.
+#include <stdio.h>
+
+int main() {
+  char f[3][7] = {{"Banana"}, {"Orange"}, {"Kiwi"}};
+  printf("%s %s %s", f[0], f[1], f[2]);
+}
+
+8. 곱셈용 명령창 계산기를 구현하시오. 매개변수가 2개이하면 프로그램이 종료 된다.
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int n, char* v[]) {
+  int a, b;
+  if (n < 4) {
+    exit(0);
+  }
+  a = atoi(v[1]);
+  b = atoi(v[3]);
+  printf("%d", a * b);
+}
+
+9. 두명의 {이름, 나이, 이메일}을 구조체 배열에 초기화하고 화면에 출력하시오.
+#include <stdio.h>
+
+typedef struct User {
+  char n[80];
+  int a;
+  char e[80];
+} User;
+
+int main() {
+  User u[2] = {{"jch", 20, "jch1597@naver.com"}, {"jth", 16, "jth1017@naver.com"}};
+  printf("%s %d %s, %s %d %s", u[0].n, u[0].a, u[0].e, u[1].n, u[1].a, u[1].e);
+}
+
+10. 두 명의 {이름과 나이 그리고 이메일}을 구조체 배열에 초기화하고, 함수 pr()에 포인터 전달하고 화면에 출력하시오.
+#include <stdio.h>
+
+typedef struct User {
+  char n[80];
+  int a;
+  char e[80];
+} User;
+
+void pr(User* u) {
+  printf("%s %d %s, %s %d %s", u->n, u->a, u->e);
+  u++;
+  printf("%s %d %s, %s %d %s", u->n, u->a, u->e);
+}
+
+int main() {
+  User u[2] = {{"jch", 20, "jch1597@naver.com"}, {"jth", 16, "jth1017@naver.com"}};
+  pr(u);
+}
