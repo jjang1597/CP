@@ -1,0 +1,60 @@
+- main.c
+
+#include <stdio.h>
+
+int add(int a, int b);
+int sub(int a, int b);
+int mul(int a, int b);
+int div(int a, int b);
+int mod(int a, int b);
+
+int main() {
+	int a = 2, b = 3;
+	printf("%d\n", add(a, b));
+	printf("%d\n", sub(a, b));
+	printf("%d\n", mul(a, b));
+	printf("%d\n", div(a, b));
+	printf("%d\n", mod(a, b));
+}
+
+- add.c
+
+int add(int a, int b) {
+	return a + b;
+}
+
+- sub.c
+
+int sub(int a, int b) {
+	return a - b;
+}
+
+- mul.c
+
+int mul(int a, int b) {
+	return a * b;
+}
+
+- div.c
+
+int div(int a, int b) {
+	return a / b;
+}
+
+- mod.c
+
+int mod(int a, int b) {
+	return a % b;
+}
+
+- 명령 프롬프트
+
+$ cl/c *.c
+$ lib /OUT:my.lib add.c sub.c mul.c div.c mod.c
+$ link main my.lib
+$ main
+
+- 소감
+ 명령프롬프트를 통해 디렉토리를 만들고 notepad를 이용하여 코딩 후, 컴파일을 하며 라이브러리로 묶고 main과 링크시켜주면서
+ 생소한 개념들을 접하여 재미있었고, 이를 더 알아보는 계기가 되었습니다. 더 많은 새로운 지식들을 향한 호기심을 갖게 되었습니다!
+ 좋은 마음가짐을 가질 수 있었던 유익한 시간을 주신 심재창 교수님께 감사드립니다!
