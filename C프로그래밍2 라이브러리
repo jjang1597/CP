@@ -5,15 +5,16 @@
 int add(int a, int b);
 int sub(int a, int b);
 int mul(int a, int b);
-int div(int a, int b);
+float div(float a, float b);
 int mod(int a, int b);
 
 int main() {
 	int a = 2, b = 3;
+	float af = 2.0, bf = 3.0;
 	printf("%d\n", add(a, b));
 	printf("%d\n", sub(a, b));
 	printf("%d\n", mul(a, b));
-	printf("%d\n", div(a, b));
+	printf("%.2f\n", div(af, bf));
 	printf("%d\n", mod(a, b));
 }
 
@@ -37,7 +38,7 @@ int mul(int a, int b) {
 
 - div.c
 
-int div(int a, int b) {
+float div(float a, float b) {
 	return a / b;
 }
 
