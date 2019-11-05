@@ -4,37 +4,58 @@
 #include <stdlib.h>
 
 typedef struct List {
+
 	int d;
+	
 	struct List* p;
+	
 } LIST;
 
 LIST* root = NULL;
 LIST* last = NULL;
 
 void addList(int a) {
+
 	LIST* r = (LIST*)malloc(sizeof(LIST));
+	
 	r->d = a;
+	
 	r->p = NULL;
 
 	if (root == NULL) {
+	
 		root = r;
+		
 	}
+	
 	else {
+	
 		last->p = r;
+		
 	}
+	
 	last = r;
+	
 }
 
 int main() {
+
 	addList(17);
+	
 	addList(24);
+	
 	addList(32);
+	
 	addList(15);
 
 	while (root) {
+	
 		printf("%d\n", root->d);
+		
 		root = root->p;
+		
 	}
+	
 }
 
  - 종류
@@ -44,35 +65,55 @@ int main() {
 
 2. Tree
  - 코드
- #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 typedef struct Tree {
+
 	int d;
+	
 	struct Tree* l, * r;
+	
 } T;
 
 void print(T* p) {
+
 	printf("%d\n", p->d);
+	
 	if (p->l) print(p->l);
+	
 	if (p->r) print(p->r);
+	
 }
 
 T* mem() {
+
 	T* p = (T*)malloc(sizeof(T));
+	
 	p->l = p->r = NULL;
+	
 	return p;
+	
 }
 
 int main() {
+
 	T* r, * r1, * r2, * l1, * l1r, * l1l;
+	
 	l1l = (T*)mem(); l1l->d = 7;
+	
 	l1r = (T*)mem(); l1r->d = 4;
+	
 	l1 = (T*)mem(); l1->d = 13; l1->l = l1l; l1->r = l1r;
+	
 	r2 = (T*)mem(); r2->d = 21;
+	
 	r1 = (T*)mem(); r1->d = 16; r1->r = r2;
+	
 	r = (T*)mem(); r->d = 24; r->l = l1; r->r = r1;
+	
 	print(r);
+	
 }
 
  - 구조
