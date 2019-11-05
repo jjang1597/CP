@@ -1,4 +1,8 @@
 1. List
+---
+ - 설명
+  리스트란 구조체와 malloc() 사용하여 메모리할당 후 값을 넣고, 이렇게 생긴 변수들을 포인터를 활용하여 연결시켜주는 것입니다.
+  
  - 코드
 #include <stdio.h>
 #include <stdlib.h>
@@ -64,6 +68,10 @@ int main() {
   Circular List
 
 2. Tree
+---
+ - 설명
+  트리란 구조체와 malloc()을 사용하여 메모리 할당 후, 포인터를 활용해 각각의 값들을 연결시켜주는 것입니다. 이렇게 연결된 형태가 나무와 닮았다하여 트리 라고 불립니다.
+
  - 코드
 #include <stdio.h>
 #include <stdlib.h>
